@@ -1,0 +1,24 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: IMAGES.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB CropImage (bitmapfile$, cropfile$, croptop%, cropbot%, cropleft%, cropright%)
+DECLARE SUB FileToPrinter (file$, LPrinter%, buffersize%)
+DECLARE SUB FlipHoriz (bitmapfile$, flipfile$)
+DECLARE SUB FlipVert (bitmapfile$, flipfile$)
+DECLARE SUB KnockOut (bitmapfile$, mergefile$, yoffset%, xoffset%)
+DECLARE SUB MaskImage (bitmapfile$, maskfile$, yoffset%, xoffset%, trim%)
+DECLARE SUB MergeExclusive (bitmapfile$, mergefile$, yoffset%, xoffset%)
+DECLARE SUB MergeImage (bitmapfile$, mergefile$, yoffset%, xoffset%)
+DECLARE SUB MoveImage (bitmapfile$, xmove%)
+DECLARE SUB PadImage (bitmapfile$, padfile$, padtop%, padbot%, padleft%, padright%)
+DECLARE SUB PrintImage (bitmapfile$, reverse%)
+DECLARE SUB PrintPCX (pcxfile$, anycolor%)
+DECLARE SUB PrintPCXC (pcxfile$, printcolor$)
+DECLARE SUB ReverseImage (bitmapfile$)
+DECLARE SUB ScreenImage (bitmapfile$, screenfile$)
+DECLARE SUB ShiftImage (image$, shift%)
+DECLARE SUB SkewImage (bitmapfile$, skewfile$, skew!)
+

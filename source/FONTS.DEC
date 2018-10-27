@@ -1,0 +1,28 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: FONTS.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION AlignChar$ (xpos!, text$, alchar$, pstab%())
+DECLARE FUNCTION BoldTextP$ (text$, pstab%())
+DECLARE FUNCTION CenterTextP$ (text$, pstab%())
+DECLARE SUB CheckHeader (fontfile$, baseline%, pstab%(), cbytes%(), clines%, ptr&())
+DECLARE SUB CreatePSTable (fontfile$, pstab%())
+DECLARE FUNCTION DesignateFont$ (id%)
+DECLARE FUNCTION ExtractID% (fontfile$)
+DECLARE FUNCTION FlushRightP$ (text$, pstab%())
+DECLARE SUB FontHeader (fontfile$, header$())
+DECLARE SUB FormatTextP (text$(), lpi!, txtwidth!, indent!, rightjustify%, pstab%())
+DECLARE FUNCTION InsertBoldCode$ (text$, insert$)
+DECLARE FUNCTION InsertTabCode$ (text$, insert$)
+DECLARE FUNCTION InsertULCode$ (text$, insert$)
+DECLARE FUNCTION JustifyTextP$ (text$, txtwidth!, pstab%())
+DECLARE FUNCTION LeftTextP$ (text$, pstab%())
+DECLARE SUB LoadPSTable (pstabfile$, pstab%())
+DECLARE SUB SavePSTable (pstabfile$, pstab%())
+DECLARE FUNCTION SpecifyFontID$ (id%)
+DECLARE SUB TextDots (text$, pstab%(), numdots%, numspaces%)
+DECLARE FUNCTION UnderlineP$ (text$, ultext$)
+DECLARE FUNCTION ValidFont% (fontfile$)
+

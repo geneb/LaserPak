@@ -1,0 +1,10 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: LOWLEVEL.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB AddBitmapHeader (bitmapfile$, numdots%, numlines%)
+DECLARE SUB GetBitmapHeader (bitmapfile$, numdots%, numlines%, reclen%)
+DECLARE SUB InitialFile (file$)
+DECLARE FUNCTION ValidBitmap% (bitmapfile$)

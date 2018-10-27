@@ -1,0 +1,27 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: PATTERNS.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION EndGraphics$ ()
+DECLARE SUB ErasePattern (pattern$, firstdot%, lastdot%)
+DECLARE SUB FillArrow (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillCircle (y!, x!, r!, shade%, pattern%)
+DECLARE SUB FillCorner (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillCrescent (y!, x!, r!, aspect!, crescent%, shade%, pattern%)
+DECLARE SUB FillDiamond (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillEllipse (y!, x!, r!, aspect!, shade%, pattern%)
+DECLARE SUB FillFillet (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillPie (y!, x!, r!, startangle!, endangle!, aspect!, shade%, pattern%)
+DECLARE SUB FillRectangle (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillTrap (y!, x!, high!, wide!, lean!, shade%, pattern%)
+DECLARE SUB FillTrap2 (y!, x!, high!, wide!, stretch!, shade%, pattern%)
+DECLARE SUB FillTriangle (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB GetPattern (patternfile$, pattern$(), patterndots%, patternlines%, patternlen%)
+DECLARE FUNCTION PatternLine$ (yp!, xp!, lp!, pattern$(), patternlines%, patternlen%, reso%)
+DECLARE FUNCTION PrintPattern$ (pattern$)
+DECLARE SUB ReverseBitmap (bitmap$)
+DECLARE SUB ReversePattern (pattern$())
+DECLARE FUNCTION StartGraphics$ (y1!, x1!, reso%)
+DECLARE SUB UserRectangle (y1!, x1!, y2!, x2!, patternfile$, reso%, reverse%)

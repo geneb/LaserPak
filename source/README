@@ -1,0 +1,179 @@
+              Additional Documentation for LaserPak Version 2
+              ===============================================
+
+
+LINKING, QUICK LIBRARIES, and VB-DOS
+------------------------------------
+
+Five library files containing assembly language routines are provided with
+LaserPak.  LZRPAK40.QLB and LZRPAK40.LIB are Quick and linking libraries for
+use with QuickBASIC 4.x versions, and LZRPAK70.QLB and LZRPAK70.LIB are Quick
+and linking libraries for use with BASIC PDS 7.x versions.  If you are using
+Visual Basic for DOS you will use the LZRPAK70.LIB file when creating a final
+executable program, and use LZRPAKVB.QLB when running programs in the VB-DOS
+editing environent.
+
+
+DETECTING ERRORS WITH FONTCOPY
+------------------------------
+
+Although it is not shown in the manual, you can determine if FontCopy was
+successful using the undocumented WhichError function.  This function must be
+declared as follows:
+
+    DECLARE FUNCTION WhichError% ()
+
+After calling FontCopy, WhichError will tell if any error happened and if so
+which one.  If no error occurred WhichError will return zero; otherwise, it
+will return an error using the same numbering system as BASIC.  The examples
+that follow show how to use WhichError.
+
+1.  IF WhichError% THEN         'an error occurred
+
+2.  IF WhichError% = 0 THEN     'no error occurred
+
+3.  IF WhichError% = 24 THEN    'printer device timeout
+
+4.  SELECT CASE WhichError%     'this is the way you'd probably do it
+      CASE 0: GOTO Success
+      CASE 24, 25: PRINT "Device timeout"
+      CASE 53: PRINT "Font file not found"
+      .
+      .
+      .
+    END SELECT
+
+
+SOURCE CODE CHANGES
+-------------------
+
+Some changes to the source code have been made since the printing of the
+manual.  These changes do not affect the documentation other than some of the
+module and external calls may have changed.  For the most current listing of
+these calls, check the comments in the source code.
+
+A few lines of code have been added to PrintPCX and PrintPCXC to check the
+validity of a prospective PCX file.  If the file to be printed does not have
+a length of at least 128 bytes (the .PCX header length), it is considered not
+valid and will not be printed.  This is the only check that is made, in the
+interest of minimizing code size.  If the .PCX extension is always used, this
+should be sufficient checking.  If you tried printing a file with a different
+extension, you could inadvertently try to print another type of document.  If
+this document were at least 128 bytes, PrintPCX would print it.  Among other
+things, this could lead to an overflow error.  If you get this error, check
+to see if the file you are using is really a .PCX file.
+
+
+
+RUNNING THE LASERPAK DEMO PROGRAMS
+----------------------------------
+
+Most of the demos that are included with LaserPak are intended to be run in
+sequential order.  For some demos, loading the soft font DEMOFONT is the
+first order of business.  This does not have to be repeated if the printer
+has not been turned off, or the fonts otherwise deleted.  Also, some demos,
+particularly those dealing with bitmapped images, alter the source bitmaps
+during the demo.  Once this demo has been run, it may be necessary to re-copy
+the *.IMG files onto your working directory.
+
+All of the demos expect that the printer was turned on or reset prior to
+starting LaserPak.  If you have been using other software, particularly
+software with fonts, reset your printer before starting the demos.  During
+your programming with LaserPak, you may wish to reset the printer if your
+program depends on a certain printer state when it executes.  Such things as
+margins, page length, downloaded fonts, and graphics resolution can cause
+unpredictable results if they are not what you think they are.
+
+Depending on your printer's memory, some of the demos may not work if there
+is insufficient memory.  All of the demos will work with a laser printer that
+has at least 384K of free memory (for example, an original HP LaserJet Plus).
+Remember that soft fonts can use considerable printer memory.  If you have
+downloaded a number of soft fonts, either reset the printer, or delete the
+fonts before running the demos.
+
+
+
+MANIPULATING SOFT FONTS
+-----------------------
+
+Many people have called us asking for clarification on how soft fonts can be
+set and cleared from the LaserJet memory.  The following printer codes may be
+sent to the printer using either the DoPrint function or BASIC's LPRINT.
+
+To make the last specified font Temporary:
+
+  LPRINT CHR$(27) + "*c4F"
+
+
+To make it permanent (the default of FontCopy):
+
+  LPRINT CHR$(27) + "*c5F"
+
+
+To delete ALL soft fonts:
+
+  LPRINT CHR$(27) + "*c0F"
+
+
+To delete the last Font ID specified:
+
+  LPRINT CHR$(27) + "*c2F"
+
+
+If a number of fonts have been downloaded, you should specify which font ID
+the previously listed codes are to affect by sending the FONT ID command:
+
+  LPRINT CHR$(27) + "*c#D"
+
+In the example above the # is replaced by the font ID number reqested.  For
+example, LPRINT CHR$(27) + "*c55D" specifies font ID number 55.
+
+
+
+ALPHABETICAL LIST OF ROUTINES
+-----------------------------
+
+A new file has been added to the LaserPak disk called ROUTINES.LST, which is
+an alphabetical listing of all the procedures in LaserPak, and the module or
+library that contains it.
+
+
+
+PRINTING RASTER GRAPHICS
+------------------------
+
+When printing binary data such as raster graphics, you should be aware of a
+quirk in all versions of BASIC.  If you open "LPT1:" for output, BASIC will
+sometimes add a CHR$(10) after each CHR$(13) that is printed.  Although this
+makes sense when printing sequential text, it is not appropriate if you are
+sending binary graphics information.  If you are sending binary data directly
+to the printer you should use the FontCopy routine provided with LaserPak.
+If you must open the printer manually, be sure to use the following syntax:
+
+    OPEN "LPT1:BIN" FOR OUTPUT AS #n
+
+Appending the "BIN" suffix tells BASIC not to tamper with your printed data.
+You may also specify other printers (LPT2: and LPT3:) with the "BIN" suffix.
+
+
+
+NEW ROUTINES
+------------
+
+Some new files have been added to the LaserPak disk.  One is ROUTINES.LST,
+which is an alphabetical listing of all the procedures in LaserPak and the
+module or library that contains it.  Another is LPADDONS.BAS, which contains
+additional procedures that have been added since the initial release of
+LaserPak Version 2.
+
+
+    DiagLineLR
+
+    DiagLineLR is a BASIC subprogram contained in LPADDONS.BAS.  It works
+    identically to DiagLine in FIGURES.BAS, but produces a low resolution
+    line.  This results in faster computational and printing speed, but
+    sacrifices appearance.  If you have a large number of diagonal lines,
+    try using this procedure.  Also try different line weights to see which
+    produces the best looking line.
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

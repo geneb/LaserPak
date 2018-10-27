@@ -1,0 +1,12 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: CONVERSN.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB FineTrimImage (bitmapfile$, trimfile$)
+DECLARE SUB Image2Text (bitmapfile$, textfile$)
+DECLARE SUB MakeImage (fontfile$, imagefile$, text$(), center%)
+DECLARE SUB Port2Land (bitmapfile$, landfile$)
+DECLARE SUB Text2Image (textfile$, bitmapfile$)
+DECLARE SUB TrimImage (bitmapfile$, trimfile$)

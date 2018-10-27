@@ -1,0 +1,45 @@
+LASERPAK.DEC                5-15-91
+Changed convcolor% to convcolor$ to reflect the correct data type.
+
+FONTS.BAS and LZRTXT.BAS    5-15-91
+Removed the inappropriate drive and path names for the '$INCLUDE files.
+
+ ^----------------------------- Version 2.01 -------------------------------^
+
+July 18, 1991
+
+    1.  Eliminated variables that were defined but not used (total of 5).
+    2.  Corrected type descriptors on two variables.
+    3.  Checked for improper comments.
+    4.  Created DiagLineLR to print low resolution diagonal line.
+    5.  Fixed bug in FormatTextP.
+
+Files affected:
+
+CONVERSN.BAS, FIGURES.BAS, FONTS.BAS, GRAPHS.BAS, LASERFNS.BAS, LZRTEXT.BAS,
+LPADDONS.BAS, LOWLEVEL.BAS, PATTERNS.BAS, LASERPAK.DEC, IMAGES.BAS
+
+ ^----------------------------- Version 2.03 -------------------------------^
+
+Somehow LASERFNS.BAS got corrupted on the ship disk.  Fixed.
+
+ ^----------------------------- Version 2.04 -------------------------------^
+
+README                      10-27-91
+
+Added a paragraph to README concerning printing raster graphics, in response
+to a customer's inquiry.  A problem caused by a quirk in BASIC can occur when
+opening a file for output as "LPT1:".
+
+ ^----------------------------- Version 2.04 -------------------------------^
+ 
+REAME                       10-30-92
+
+Added information about using the WhichError function with FontCopy.  Also
+added instructions for using LZRPAKVB.QLB with VB-DOS.
+
+FONTCOPY.ASM                10-30-92
+
+Fixed a bug that caused a system hang when the printer was off-line.
+
+ ^----------------------------- Version 2.08 -------------------------------^

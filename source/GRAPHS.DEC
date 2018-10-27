@@ -1,0 +1,16 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: GRAPHS.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION HorzGrid$ (majorincs%, minorincs%, inc!, gridhigh!, majorwt%, minorwt%)
+DECLARE FUNCTION HorzScale$ (majorincs%, minorincs%, inc!, tick!, wt%)
+DECLARE FUNCTION HorzTitles$ (title$(), majorincs%, inc!, cpi!)
+DECLARE FUNCTION HorzTitlesP$ (title$(), majorincs%, inc!, pstab%())
+DECLARE SUB PlotLine (y!(), x!(), linewt%, symbol%, wide!, symbolwt%)
+DECLARE SUB Symbols (y!, x!, wide!, symbol%, wt%)
+DECLARE FUNCTION VertGrid$ (majorincs%, minorincs%, inc!, gridwide!, majorwt%, minorwt%)
+DECLARE FUNCTION VertScale$ (majorincs%, minorincs%, inc!, tick!, wt%)
+DECLARE FUNCTION VertTitles$ (title$(), majorincs%, inc!, rightjustify%, cpi!)
+DECLARE FUNCTION VertTitlesP$ (title$(), majorincs%, inc!, rightjustify%, pstab%())

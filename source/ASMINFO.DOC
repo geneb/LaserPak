@@ -1,0 +1,4 @@
+These assembly language files are the source code for the assembly routines
+used in LaserPak.  The QuickPak Professional routines called by FontCopy
+are not included.  The two batch files are what we use to create the LaserPak
+.LIB library files.

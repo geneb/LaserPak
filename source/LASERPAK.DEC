@@ -1,0 +1,203 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Library: LZRPAKxx.LIB
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB GetCount (bytecount&)
+DECLARE SUB GetOffsets (vo%, ho%)
+DECLARE SUB GetHandle (handle%)
+DECLARE SUB GetLineTint (tint%)
+DECLARE SUB GetDefPat (pattern%)
+DECLARE SUB FontCopy (fontfile$, LPrinter%, buffer$, fontidnum%)
+DECLARE SUB PutCount (bytecount&)
+DECLARE SUB PutOffsets (BYVAL vo%, BYVAL ho%)
+DECLARE SUB PutHandle (BYVAL handle%)
+DECLARE SUB PutLineTint (BYVAL tint%)
+DECLARE SUB PutDefPat (BYVAL pattern%)
+DECLARE SUB Slant (BYVAL ndots%, s$)
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: LASERFNS.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION CrossHairs$ (wide!, wt%)
+DECLARE FUNCTION DoPrint& (pstring$)
+DECLARE FUNCTION EjectPage$ ()
+DECLARE SUB FillDriver (yfill!, xfill!, high!, wide!, shade%, pattern%)
+DECLARE FUNCTION GrayScale$ (high!, wide!, shade%)
+DECLARE FUNCTION HorzLine$ (horzlen!, wt%)
+DECLARE FUNCTION HPPattern$ (high!, wide!, pattern%)
+DECLARE FUNCTION Initial$ ()
+DECLARE FUNCTION LineFeed$ (lpi!)
+DECLARE FUNCTION MoveCursor$ (dy!, dx!)
+DECLARE FUNCTION MoveDots$ (dy%, dx%)
+DECLARE FUNCTION OpenFile% (filename$)
+DECLARE FUNCTION PopCursor$ ()
+DECLARE FUNCTION PosCursor$ (y!, x!)
+DECLARE SUB PrintOffset (vertoffset!, horizoffset!)
+DECLARE FUNCTION PushCursor$ ()
+DECLARE FUNCTION Rectangle$ (high!, wide!, wt%)
+DECLARE FUNCTION Resolution$ (reso%)
+DECLARE FUNCTION TDot$ (td!)
+DECLARE FUNCTION TPos$ (tp!)
+DECLARE FUNCTION VertLine$ (vertlen!, wt%)
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: FIGURES.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB Arcs (y!, x!, r!, startangle!, endangle!, wt%)
+DECLARE SUB Bar3D (y!, x!, high!, wide1!, wide2!, angle1!, angle2!, wt%)
+DECLARE SUB BotBar3D (y!, x!, wide1!, wide2!, angle1!, angle2!, wt%)
+DECLARE SUB Circles (y!, x!, r!, wt%)
+DECLARE SUB DiagLine (y1!, x1!, y2!, x2!, wt%)
+DECLARE FUNCTION DiagOffset! (wide!, angle!)
+DECLARE SUB Ellipse (y!, x!, r!, aspect!, wt%)
+DECLARE SUB LeftSideBar (y!, x!, high!, wide!, angle!, wt%)
+DECLARE SUB Lines (y1!, x1!, y2!, x2!, wt%)
+DECLARE SUB Pies (y!, x!, r!, startangle!, endangle!, aspect!, wt%)
+DECLARE SUB RadialLine (y!, x!, r!, angle!, aspect!, endy!, endx!)
+DECLARE SUB RightSideBar (y!, x!, high!, wide!, angle!, wt%)
+DECLARE SUB Slices (y!, x!, r!, startangle!, endangle!, aspect!, wt%)
+DECLARE SUB TopBar3D (y!, x!, high!, wide1!, wide2!, angle1!, angle2!, wt%)
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: LZRTEXT.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION BoldText$ (text$, cpi!)
+DECLARE FUNCTION CenterText$ (text$, cpi!)
+DECLARE FUNCTION CharSpacing$ (cpi!)
+DECLARE FUNCTION CompFont$ ()
+DECLARE FUNCTION FixedSpacing$ ()
+DECLARE FUNCTION FlushRight$ (text$, cpi!)
+DECLARE SUB FormatText (text$(), lpi!, txtwidth!, indent!, rightjustify%, cpi!)
+DECLARE FUNCTION JustifyText$ (text$, txtwidth!, cpi!, rightjustify%)
+DECLARE FUNCTION Proportional$ ()
+DECLARE FUNCTION SlantText$ (text$, cpi!, lpi!)
+DECLARE FUNCTION StdFont$ ()
+DECLARE FUNCTION UnderlineOff$ ()
+DECLARE FUNCTION UnderlineOn$ ()
+DECLARE FUNCTION VertText$ (text$, lpi!)
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: FONTS.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION AlignChar$ (xpos!, text$, alchar$, pstab%())
+DECLARE FUNCTION BoldTextP$ (text$, pstab%())
+DECLARE FUNCTION CenterTextP$ (text$, pstab%())
+DECLARE SUB CheckHeader (fontfile$, baseline%, pstab%(), cbytes%(), clines%, ptr&())
+DECLARE SUB CreatePSTable (fontfile$, pstab%())
+DECLARE FUNCTION DesignateFont$ (id%)
+DECLARE FUNCTION ExtractID% (fontfile$)
+DECLARE FUNCTION FlushRightP$ (text$, pstab%())
+DECLARE SUB FontHeader (fontfile$, header$())
+DECLARE SUB FormatTextP (text$(), lpi!, txtwidth!, indent!, rightjustify%, pstab%())
+DECLARE FUNCTION InsertBoldCode$ (text$, insert$)
+DECLARE FUNCTION InsertTabCode$ (text$, insert$)
+DECLARE FUNCTION InsertULCode$ (text$, insert$)
+DECLARE FUNCTION JustifyTextP$ (text$, txtwidth!, pstab%())
+DECLARE FUNCTION LeftTextP$ (text$, pstab%())
+DECLARE SUB LoadPSTable (pstabfile$, pstab%())
+DECLARE SUB SavePSTable (pstabfile$, pstab%())
+DECLARE FUNCTION SpecifyFontID$ (id%)
+DECLARE SUB TextDots (text$, pstab%(), numdots%, numspaces%)
+DECLARE FUNCTION UnderlineP$ (text$, ultext$)
+DECLARE FUNCTION ValidFont% (fontfile$)
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: PATTERNS.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION EndGraphics$ ()
+DECLARE SUB ErasePattern (pattern$, firstdot%, lastdot%)
+DECLARE SUB FillArrow (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillCircle (y!, x!, r!, shade%, pattern%)
+DECLARE SUB FillCorner (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillCrescent (y!, x!, r!, aspect!, crescent%, shade%, pattern%)
+DECLARE SUB FillDiamond (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillEllipse (y!, x!, r!, aspect!, shade%, pattern%)
+DECLARE SUB FillFillet (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillPie (y!, x!, r!, startangle!, endangle!, aspect!, shade%, pattern%)
+DECLARE SUB FillRectangle (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB FillTrap (y!, x!, high!, wide!, lean!, shade%, pattern%)
+DECLARE SUB FillTrap2 (y!, x!, high!, wide!, stretch!, shade%, pattern%)
+DECLARE SUB FillTriangle (y!, x!, high!, wide!, shade%, pattern%)
+DECLARE SUB GetPattern (patternfile$, pattern$(), patterndots%, patternlines%, patternlen%)
+DECLARE FUNCTION PatternLine$ (yp!, xp!, lp!, pattern$(), patternlines%, patternlen%, reso%)
+DECLARE FUNCTION PrintPattern$ (pattern$)
+DECLARE SUB ReverseBitmap (bitmap$)
+DECLARE SUB ReversePattern (pattern$())
+DECLARE FUNCTION StartGraphics$ (y1!, x1!, reso%)
+DECLARE SUB UserRectangle (y1!, x1!, y2!, x2!, patternfile$, reso%, reverse%)
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: IMAGES.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB CropImage (bitmapfile$, cropfile$, croptop%, cropbot%, cropleft%, cropright%)
+DECLARE SUB FileToPrinter (file$, LPrinter%, buffersize%)
+DECLARE SUB FlipHoriz (bitmapfile$, flipfile$)
+DECLARE SUB FlipVert (bitmapfile$, flipfile$)
+DECLARE SUB KnockOut (bitmapfile$, mergefile$, yoffset%, xoffset%)
+DECLARE SUB MaskImage (bitmapfile$, maskfile$, yoffset%, xoffset%, trim%)
+DECLARE SUB MergeExclusive (bitmapfile$, mergefile$, yoffset%, xoffset%)
+DECLARE SUB MergeImage (bitmapfile$, mergefile$, yoffset%, xoffset%)
+DECLARE SUB MoveImage (bitmapfile$, xmove%)
+DECLARE SUB PadImage (bitmapfile$, padfile$, padtop%, padbot%, padleft%, padright%)
+DECLARE SUB PrintImage (bitmapfile$, reverse%)
+DECLARE SUB PrintPCX (pcxfile$, anycolor%)
+DECLARE SUB PrintPCXC (pcxfile$, printcolor$)
+DECLARE SUB ReverseImage (bitmapfile$)
+DECLARE SUB ScreenImage (bitmapfile$, screenfile$)
+DECLARE SUB ShiftImage (image$, shift%)
+DECLARE SUB SkewImage (bitmapfile$, skewfile$, skew!)
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: CONVERSN.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB FineTrimImage (bitmapfile$, trimfile$)
+DECLARE SUB Image2Text (bitmapfile$, textfile$)
+DECLARE SUB MakeImage (fontfile$, imagefile$, text$(), center%)
+DECLARE SUB Port2Land (bitmapfile$, landfile$)
+DECLARE SUB Text2Image (textfile$, bitmapfile$)
+DECLARE SUB TrimImage (bitmapfile$, trimfile$)
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: GRAPHS.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION HorzGrid$ (majorincs%, minorincs%, inc!, gridhigh!, majorwt%, minorwt%)
+DECLARE FUNCTION HorzScale$ (majorincs%, minorincs%, inc!, tick!, wt%)
+DECLARE FUNCTION HorzTitles$ (title$(), majorincs%, inc!, cpi!)
+DECLARE FUNCTION HorzTitlesP$ (title$(), majorincs%, inc!, pstab%())
+DECLARE SUB PlotLine (y!(), x!(), linewt%, symbol%, wide!, symbolwt%)
+DECLARE SUB Symbols (y!, x!, wide!, symbol%, wt%)
+DECLARE FUNCTION VertGrid$ (majorincs%, minorincs%, inc!, gridwide!, majorwt%, minorwt%)
+DECLARE FUNCTION VertScale$ (majorincs%, minorincs%, inc!, tick!, wt%)
+DECLARE FUNCTION VertTitles$ (title$(), majorincs%, inc!, rightjustify%, cpi!)
+DECLARE FUNCTION VertTitlesP$ (title$(), majorincs%, inc!, rightjustify%, pstab%())
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: LOWLEVEL.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB AddBitmapHeader (bitmapfile$, numdots%, numlines%)
+DECLARE SUB GetBitmapHeader (bitmapfile$, numdots%, numlines%, reclen%)
+DECLARE SUB InitialFile (file$)
+DECLARE FUNCTION ValidBitmap% (bitmapfile$)
+

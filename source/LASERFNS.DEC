@@ -1,0 +1,27 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: LASERFNS.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION CrossHairs$ (wide!, wt%)
+DECLARE FUNCTION DoPrint& (pstring$)
+DECLARE FUNCTION EjectPage$ ()
+DECLARE SUB FillDriver (yfill!, xfill!, high!, wide!, shade%, pattern%)
+DECLARE FUNCTION GrayScale$ (high!, wide!, shade%)
+DECLARE FUNCTION HorzLine$ (horzlen!, wt%)
+DECLARE FUNCTION HPPattern$ (high!, wide!, pattern%)
+DECLARE FUNCTION Initial$ ()
+DECLARE FUNCTION LineFeed$ (lpi!)
+DECLARE FUNCTION MoveCursor$ (dy!, dx!)
+DECLARE FUNCTION MoveDots$ (dy%, dx%)
+DECLARE FUNCTION OpenFile% (filename$)
+DECLARE FUNCTION PopCursor$ ()
+DECLARE FUNCTION PosCursor$ (y!, x!)
+DECLARE SUB PrintOffset (vertoffset!, horizoffset!)
+DECLARE FUNCTION PushCursor$ ()
+DECLARE FUNCTION Rectangle$ (high!, wide!, wt%)
+DECLARE FUNCTION Resolution$ (reso%)
+DECLARE FUNCTION TDot$ (td!)
+DECLARE FUNCTION TPos$ (tp!)
+DECLARE FUNCTION VertLine$ (vertlen!, wt%)

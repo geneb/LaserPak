@@ -1,0 +1,21 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: LZRTEXT.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE FUNCTION BoldText$ (text$, cpi!)
+DECLARE FUNCTION CenterText$ (text$, cpi!)
+DECLARE FUNCTION CharSpacing$ (cpi!)
+DECLARE FUNCTION CompFont$ ()
+DECLARE FUNCTION FixedSpacing$ ()
+DECLARE FUNCTION FlushRight$ (text$, cpi!)
+DECLARE SUB FormatText (text$(), lpi!, txtwidth!, indent!, rightjustify%, cpi!)
+DECLARE FUNCTION JustifyText$ (text$, txtwidth!, cpi!, rightjustify%)
+DECLARE FUNCTION Proportional$ ()
+DECLARE FUNCTION SlantText$ (text$, cpi!, lpi!)
+DECLARE FUNCTION StdFont$ ()
+DECLARE FUNCTION UnderlineOff$ ()
+DECLARE FUNCTION UnderlineOn$ ()
+DECLARE FUNCTION VertText$ (text$, lpi!)
+

@@ -1,0 +1,20 @@
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+'              Procedure Declarations for Module: FIGURES.BAS
+
+'อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+DECLARE SUB Arcs (y!, x!, r!, startangle!, endangle!, wt%)
+DECLARE SUB Bar3D (y!, x!, high!, wide1!, wide2!, angle1!, angle2!, wt%)
+DECLARE SUB BotBar3D (y!, x!, wide1!, wide2!, angle1!, angle2!, wt%)
+DECLARE SUB Circles (y!, x!, r!, wt%)
+DECLARE SUB DiagLine (y1!, x1!, y2!, x2!, wt%)
+DECLARE FUNCTION DiagOffset! (wide!, angle!)
+DECLARE SUB Ellipse (y!, x!, r!, aspect!, wt%)
+DECLARE SUB LeftSideBar (y!, x!, high!, wide!, angle!, wt%)
+DECLARE SUB Lines (y1!, x1!, y2!, x2!, wt%)
+DECLARE SUB Pies (y!, x!, r!, startangle!, endangle!, aspect!, wt%)
+DECLARE SUB RadialLine (y!, x!, r!, angle!, aspect!, endy!, endx!)
+DECLARE SUB RightSideBar (y!, x!, high!, wide!, angle!, wt%)
+DECLARE SUB Slices (y!, x!, r!, startangle!, endangle!, aspect!, wt%)
+DECLARE SUB TopBar3D (y!, x!, high!, wide1!, wide2!, angle1!, angle2!, wt%)
